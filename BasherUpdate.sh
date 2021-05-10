@@ -7,4 +7,4 @@ echo "Upgrade complete."
 
 sudo apt autoremove -y
 echo "Autoremove complete."
- echo "Exiting..."
+echo "Exiting..."
