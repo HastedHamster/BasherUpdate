@@ -1,4 +1,6 @@
-#!/usr/bin/bash
+#! /usr/bin/bash
+
+sudo apt clean
 sudo apt update --fix-missing
 echo "Update complete."
 
