@@ -8,4 +8,5 @@ echo "Old Keys:"
 sudo md5sum /etc/ssh/old_keys/*
 echo "Restarting SSH service..."
 sudo systemctl restart ssh && sudo systemctl status ssh
+sudo netstat -tulpn
 echo "Exiting script..."
