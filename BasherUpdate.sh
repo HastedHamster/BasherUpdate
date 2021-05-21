@@ -1,45 +1,47 @@
 #!/usr/bin/bash
 RED='\033[0;31m'
+GREEN='\033[0;32m'
+PURPLE='\033[0;35m'
 NC='\033[0m' # No Color
 
 #Region --- Updates
-echo -e "${RED}RUNNING: sudo apt update --fix-missing${NC}"
+echo -e "${PURPLE}RUNNING: sudo apt update --fix-missing${NC}"
 sudo apt clean
 sudo apt update --fix-missing
 status=$?
 echo $status
-#if status -eq 0
+#if $status -eq 0
 #then 
-echo -e "${RED}COMPLETED: sudo apt update --fix-missing${NC}"
+echo -e "${GREEN}COMPLETED: sudo apt update --fix-missing${NC}"
 #else 
-#echo "FAILED: sudo apt update --fix-missing"
+#echo "${RED}FAILED: sudo apt update --fix-missing${NC}"
 #fi
 
 #Region --- Distro Upgrades
 #echo "RUNNING: sudo apt dist-upgrade -y"
-echo -e "${RED}RUNNING: sudo apt full-upgrade -y${NC}"
+echo -e "${PURPLE}RUNNING: sudo apt full-upgrade -y${NC}"
 sudo apt full-upgrade -y
 status=$?
 echo $status
-#if test status -eq 0
+#if $status -eq 0
 #then
-echo -e "${RED}COMPLETED: sudo apt full-upgrade -y${NC}"
+echo -e "${GREEN}COMPLETED: sudo apt full-upgrade -y${NC}"
 #else 
-#echo "FAILED: sudo apt full-upgrade -y"
+#echo "${RED}FAILED: sudo apt full-upgrade -y{NC}"
 #fi
 
 #Region
-echo -e "${RED}RUNNING: sudo apt autoremove -y${NC}"
+echo -e "${PURPLE}RUNNING: sudo apt autoremove -y${NC}"
 sudo apt autoremove -y
 status=$?
 echo $status
-#if test status -eq 0
-#then 
-echo -e "${RED}COMPLETED: sudo apt autoremove -y${NC}"
-#else
-#echo "FAILED: sudo apt autoremove -y"
-#fi
+if $status -eq 0
+then 
+echo -e "${GREEN}COMPLETED: sudo apt autoremove -y${NC}"
+else
+echo "${RED}FAILED: sudo apt autoremove -y${NC}"
+fi
 
 #Region --- Exiting BasherUpdate
-echo -e "${RED}Exiting BasherUpdate...${NC}"
+echo -e "${PURPLE}Exiting BasherUpdate...${NC}"
 exit 0
