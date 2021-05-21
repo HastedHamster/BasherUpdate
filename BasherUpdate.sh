@@ -7,7 +7,7 @@ NC='\033[0m' # No Color
 #Region --- Updates
 echo -e "${PURPLE}RUNNING: sudo apt update --fix-missing${NC}"
 
-for $UpdateLoop {1..5}
+for i {1..5}
 do  
 #   echo "Welcome $c times"
 sudo apt clean
@@ -17,7 +17,7 @@ echo $status
 if test $status -eq 0
 then 
 echo -e "${GREEN}COMPLETED: sudo apt update --fix-missing${NC}"
-break $UpdateLoop
+break i
 else 
 echo -e "${RED}FAILED: sudo apt update --fix-missing${NC}"
 fi
