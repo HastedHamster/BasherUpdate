@@ -14,11 +14,11 @@ echo $status
 #then 
 echo -e "${GREEN}COMPLETED: sudo apt update --fix-missing${NC}"
 #else 
-#echo "${RED}FAILED: sudo apt update --fix-missing${NC}"
+#echo -e "${RED}FAILED: sudo apt update --fix-missing${NC}"
 #fi
 
 #Region --- Distro Upgrades
-#echo "RUNNING: sudo apt dist-upgrade -y"
+#echo -e "RUNNING: sudo apt dist-upgrade -y"
 echo -e "${PURPLE}RUNNING: sudo apt full-upgrade -y${NC}"
 sudo apt full-upgrade -y
 status=$?
@@ -27,7 +27,7 @@ echo $status
 #then
 echo -e "${GREEN}COMPLETED: sudo apt full-upgrade -y${NC}"
 #else 
-#echo "${RED}FAILED: sudo apt full-upgrade -y{NC}"
+#echo -e "${RED}FAILED: sudo apt full-upgrade -y{NC}"
 #fi
 
 #Region
@@ -39,7 +39,7 @@ if $status -eq 0
 then 
 echo -e "${GREEN}COMPLETED: sudo apt autoremove -y${NC}"
 else
-echo "${RED}FAILED: sudo apt autoremove -y${NC}"
+echo -e "${RED}FAILED: sudo apt autoremove -y${NC}"
 fi
 
 #Region --- Exiting BasherUpdate
