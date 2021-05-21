@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 sudo mkdir /etc/ssh/old_keys
 sudo mv /etc/ssh/ssh_host_* /etc/ssh/old_keys/
 echo "Generating new keys..."
@@ -23,3 +25,4 @@ sudo systemctl restart ssh && sudo systemctl status ssh
 sudo netstat -tulpn
 
 echo "Exiting script..."
+exit 0
