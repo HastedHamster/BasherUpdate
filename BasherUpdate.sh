@@ -20,7 +20,7 @@ break
 else 
 echo -e "${RED}FAILED: sudo apt update --fix-missing${NC}/n"
 echo $status
-wait 1m
+sleep 1m
 fi
 done
 
