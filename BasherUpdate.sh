@@ -15,7 +15,7 @@ sudo apt update --fix-missing
 status=$?
 if test $status -eq 0
 then 
-echo -e "${GREEN}COMPLETED: sudo apt update --fix-missing${NC}"
+echo -e "${GREEN}SUCCESS: sudo apt update --fix-missing${NC}"
 break
 else 
 echo -e "${RED}FAILED: sudo apt update --fix-missing${NC}"
@@ -30,7 +30,7 @@ sudo apt full-upgrade -y
 status=$?
 if test $status -eq 0
 then
-echo -e "${GREEN}COMPLETED: sudo apt full-upgrade -y${NC}"
+echo -e "${GREEN}SUCCESS: sudo apt full-upgrade -y${NC}"
 else 
 echo -e "${RED}FAILED: sudo apt full-upgrade -y{NC}"
 echo $status
@@ -42,7 +42,7 @@ sudo apt autoremove -y
 status=$?
 if test $status -eq 0
 then 
-echo -e "${GREEN}COMPLETED: sudo apt autoremove -y${NC}"
+echo -e "${GREEN}SUCCESS: sudo apt autoremove -y${NC}"
 else
 echo -e "${RED}FAILED: sudo apt autoremove -y${NC}"
 echo $status
