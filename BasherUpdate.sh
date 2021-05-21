@@ -10,12 +10,12 @@ sudo apt clean
 sudo apt update --fix-missing
 status=$?
 echo $status
-#if $status -eq 0
-#then 
+if test $status -eq 0
+then 
 echo -e "${GREEN}COMPLETED: sudo apt update --fix-missing${NC}"
-#else 
-#echo -e "${RED}FAILED: sudo apt update --fix-missing${NC}"
-#fi
+else 
+echo -e "${RED}FAILED: sudo apt update --fix-missing${NC}"
+fi
 
 #Region --- Distro Upgrades
 #echo -e "RUNNING: sudo apt dist-upgrade -y"
@@ -23,12 +23,12 @@ echo -e "${PURPLE}RUNNING: sudo apt full-upgrade -y${NC}"
 sudo apt full-upgrade -y
 status=$?
 echo $status
-#if $status -eq 0
-#then
+if test $status -eq 0
+then
 echo -e "${GREEN}COMPLETED: sudo apt full-upgrade -y${NC}"
-#else 
-#echo -e "${RED}FAILED: sudo apt full-upgrade -y{NC}"
-#fi
+else 
+echo -e "${RED}FAILED: sudo apt full-upgrade -y{NC}"
+fi
 
 #Region
 echo -e "${PURPLE}RUNNING: sudo apt autoremove -y${NC}"
