@@ -7,7 +7,7 @@ NC='\033[0m' # No Color
 #Region --- Updates
 echo -e "${PURPLE}RUNNING: sudo apt update --fix-missing${NC}"
 
-for UpdateLoop (( c=1; c<=5; c++ ))
+for UpdateLoop (( ; ; ))
 do  
 #   echo "Welcome $c times"
 sudo apt clean
