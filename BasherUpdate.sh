@@ -13,40 +13,39 @@ do
 sudo apt clean
 sudo apt update --fix-missing
 status=$?
-echo $status
 if test $status -eq 0
 then 
 echo -e "${GREEN}COMPLETED: sudo apt update --fix-missing${NC}"
 break
 else 
 echo -e "${RED}FAILED: sudo apt update --fix-missing${NC}"
+echo $status
 fi
 done
-
 
 #Region --- Distro Upgrades
 #echo -e "RUNNING: sudo apt dist-upgrade -y"
 echo -e "${PURPLE}RUNNING: sudo apt full-upgrade -y${NC}"
 sudo apt full-upgrade -y
 status=$?
-echo $status
 if test $status -eq 0
 then
 echo -e "${GREEN}COMPLETED: sudo apt full-upgrade -y${NC}"
 else 
 echo -e "${RED}FAILED: sudo apt full-upgrade -y{NC}"
+echo $status
 fi
 
 #Region
 echo -e "${PURPLE}RUNNING: sudo apt autoremove -y${NC}"
 sudo apt autoremove -y
 status=$?
-echo $status
 if test $status -eq 0
 then 
 echo -e "${GREEN}COMPLETED: sudo apt autoremove -y${NC}"
 else
 echo -e "${RED}FAILED: sudo apt autoremove -y${NC}"
+echo $status
 fi
 
 #Region --- Exiting BasherUpdate
