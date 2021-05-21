@@ -17,7 +17,7 @@ echo $status
 if test $status -eq 0
 then 
 echo -e "${GREEN}COMPLETED: sudo apt update --fix-missing${NC}"
-break i
+break
 else 
 echo -e "${RED}FAILED: sudo apt update --fix-missing${NC}"
 fi
