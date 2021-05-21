@@ -1,17 +1,43 @@
 #!/usr/bin/bash
 
+#Region --- Updates
 echo "RUNNING: sudo apt update --fix-missing"
 sudo apt clean
 sudo apt update --fix-missing
-echo "COMPLETED: Updates"
+status=$?
+echo status
+#if status -eq 0
+#then 
+echo "COMPLETED: sudo apt update --fix-missing"
+#else 
+#echo "FAILED: sudo apt update --fix-missing"
+#fi
 
-echo "RUNNING: sudo apt dist-upgrade -y"
-sudo apt dist-upgrade -y
+#Region --- Distro Upgrades
+#echo "RUNNING: sudo apt dist-upgrade -y"
 echo "RUNNING: sudo apt full-upgrade -y"
 sudo apt full-upgrade -y
-echo "COMPLETED: Upgrades"
+status=$?
+echo status
+#if test status -eq 0
+#then
+echo "COMPLETED: sudo apt full-upgrade -y"
+#else 
+#echo "FAILED: sudo apt full-upgrade -y"
+#fi
 
+#Region
 echo "RUNNING: sudo apt autoremove -y"
 sudo apt autoremove -y
-echo "COMPLETED: Autoremove cleanup"
+status=$?
+echo status
+#if test status -eq 0
+#then 
+echo "COMPLETED: sudo apt autoremove -y"
+#else
+#echo "FAILED: sudo apt autoremove -y"
+#fi
+
+#Region --- Exiting BasherUpdate
 echo "Exiting BasherUpdate..."
+exit 0
