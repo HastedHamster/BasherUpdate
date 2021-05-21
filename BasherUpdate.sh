@@ -5,7 +5,7 @@ echo "RUNNING: sudo apt update --fix-missing"
 sudo apt clean
 sudo apt update --fix-missing
 status=$?
-echo status
+echo $status
 #if status -eq 0
 #then 
 echo "COMPLETED: sudo apt update --fix-missing"
@@ -18,7 +18,7 @@ echo "COMPLETED: sudo apt update --fix-missing"
 echo "RUNNING: sudo apt full-upgrade -y"
 sudo apt full-upgrade -y
 status=$?
-echo status
+echo $status
 #if test status -eq 0
 #then
 echo "COMPLETED: sudo apt full-upgrade -y"
@@ -30,7 +30,7 @@ echo "COMPLETED: sudo apt full-upgrade -y"
 echo "RUNNING: sudo apt autoremove -y"
 sudo apt autoremove -y
 status=$?
-echo status
+echo $status
 #if test status -eq 0
 #then 
 echo "COMPLETED: sudo apt autoremove -y"
