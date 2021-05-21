@@ -35,7 +35,7 @@ echo -e "${PURPLE}RUNNING: sudo apt autoremove -y${NC}"
 sudo apt autoremove -y
 status=$?
 echo $status
-if $status -eq 0
+if test $status -eq 0
 then 
 echo -e "${GREEN}COMPLETED: sudo apt autoremove -y${NC}"
 else
