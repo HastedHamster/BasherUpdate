@@ -24,7 +24,7 @@ fi
 done
 
 #Region --- Distro Upgrades
-	echo -e "${PURPLE}RUNNING: sudo apt full-upgrade -y${NC}"
+	echo -e "${PURPLE}RUNNING: sudo apt full-upgrade -y${NC}\n"
 	sudo apt full-upgrade -y
 	status=$?
 if test $status -eq 0
