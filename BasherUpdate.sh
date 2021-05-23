@@ -30,7 +30,7 @@ done
 	status=$?
 if test $status -eq 0
 then
-	echo -e "${GREEN}SUCCESS: sudo apt full-upgrade -y${NC}"/n
+	echo -e "${GREEN}SUCCESS: sudo apt full-upgrade -y${NC}" /n
 else 
 	echo -e "${RED}FAILED: sudo apt full-upgrade -y{NC}/n"
 	echo $status
