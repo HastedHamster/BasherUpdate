@@ -24,6 +24,18 @@ fi
 done
 
 #Region --- Distro Upgrades
+	echo -e "${PURPLE}RUNNING: sudo apt dist-upgrade -y${NC}"
+	sudo apt dist-upgrade -y
+	status=$?
+if test $status -eq 0
+then
+	echo -e "${GREEN}SUCCESS: sudo apt dist-upgrade -y${NC}\n"
+else 
+	echo -e "${RED}FAILED: sudo apt dist-upgrade -y{NC}\n"
+	echo $status
+fi
+
+#Region --- Full Upgrades
 	echo -e "${PURPLE}RUNNING: sudo apt full-upgrade -y${NC}"
 	sudo apt full-upgrade -y
 	status=$?
