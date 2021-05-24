@@ -5,7 +5,7 @@
 	NC='\033[0m' # No Color
 
 #Region --- Updates
-	printf "RUNNING: sudo apt update --fix-missing"
+	printf "RUNNING: sudo apt update --fix-missing/n"
 
 for i in {1..100}
 do  
