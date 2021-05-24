@@ -18,46 +18,57 @@ then
 	break
 else 
 	echo -e "${RED}FAILED: sudo apt update --fix-missing${NC}\n"
-	echo $status
 	sleep 1m
 fi
 done
 
 #Region --- Distro Upgrades
-	echo -e "${PURPLE}RUNNING: sudo apt dist-upgrade -y${NC}"
+for i in {1..100}
+do 	
+echo -e "${PURPLE}RUNNING: sudo apt dist-upgrade -y${NC}"
 	sudo apt dist-upgrade -y
 	status=$?
 if test $status -eq 0
 then
 	echo -e "${GREEN}SUCCESS: sudo apt dist-upgrade -y${NC}\n"
+	break
 else 
 	echo -e "${RED}FAILED: sudo apt dist-upgrade -y{NC}\n"
-	echo $status
+	sleep 1m
 fi
+done
 
 #Region --- Full Upgrades
-	echo -e "${PURPLE}RUNNING: sudo apt full-upgrade -y${NC}"
+for i in {1..100}
+do 	
+echo -e "${PURPLE}RUNNING: sudo apt full-upgrade -y${NC}"
 	sudo apt full-upgrade -y
 	status=$?
 if test $status -eq 0
 then
 	echo -e "${GREEN}SUCCESS: sudo apt full-upgrade -y${NC}\n"
+	break
 else 
 	echo -e "${RED}FAILED: sudo apt full-upgrade -y{NC}\n"
-	echo $status
+	sleep 1m
 fi
+done
 
 #Region
-	echo -e "${PURPLE}RUNNING: sudo apt autoremove -y${NC}"
+for i in {1..100}
+do 	
+echo -e "${PURPLE}RUNNING: sudo apt autoremove -y${NC}"
 	sudo apt autoremove -y
 	status=$?
 if test $status -eq 0
 then 
 	echo -e "${GREEN}SUCCESS: sudo apt autoremove -y${NC}\n"
+	break
 else
 	echo -e "${RED}FAILED: sudo apt autoremove -y${NC}\n"
-	echo $status
+	sleep 1m
 fi
+done
 
 #Region --- Exiting BasherUpdate
 	echo -e "${PURPLE}Exiting BasherUpdate...${NC}\n"
