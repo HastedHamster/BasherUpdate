@@ -22,34 +22,18 @@ else
 fi
 done
 
-#Region --- Distro Upgrades
+#Region --- Upgrades
 for i in {1..100}
 do 	
-echo -e "${PURPLE}RUNNING: sudo apt dist-upgrade -y${NC}"
-	sudo apt dist-upgrade -y
-	status=$?
-if test $status -eq 0
-then
-	echo -e "${GREEN}SUCCESS: sudo apt dist-upgrade -y${NC}\n"
-	break
-else 
-	echo -e "${RED}FAILED: sudo apt dist-upgrade -y{NC}\n"
-	sleep 1m
-fi
-done
-
-#Region --- Full Upgrades
-for i in {1..100}
-do 	
-echo -e "${PURPLE}RUNNING: sudo apt full-upgrade -y${NC}"
+echo -e "${PURPLE}RUNNING: sudo apt upgrade -y${NC}"
 	sudo apt full-upgrade -y
 	status=$?
 if test $status -eq 0
 then
-	echo -e "${GREEN}SUCCESS: sudo apt full-upgrade -y${NC}\n"
+	echo -e "${GREEN}SUCCESS: sudo apt upgrade -y${NC}\n"
 	break
 else 
-	echo -e "${RED}FAILED: sudo apt full-upgrade -y{NC}\n"
+	echo -e "${RED}FAILED: sudo apt upgrade -y${NC}\n"
 	sleep 1m
 fi
 done
